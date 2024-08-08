@@ -130,7 +130,7 @@ class _InscriptionScreenState extends State<InscriptionScreen> {
                       });
                     }, (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Veuillez entrer votre mot de passe';
+                        return 'Veuillez entrer votre mot de passe de confirmation';
                       } else if (confirmPassword.text != password.text) {
                         return 'Confirmer votre mot de passe';
                       }

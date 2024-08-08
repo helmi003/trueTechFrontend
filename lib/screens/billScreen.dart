@@ -23,14 +23,14 @@ class BillScreen extends StatefulWidget {
 
 class _BillScreenState extends State<BillScreen> {
   final formKey = GlobalKey<FormState>();
-  bool? distribution = false;
+  bool? reparation = false;
   bool? delivery = false;
   TextEditingController userName = TextEditingController();
   TextEditingController phone = TextEditingController();
   TextEditingController address = TextEditingController();
   List<SelectedOptionModel> selectedOptions = [];
   num deliveryPrice = 7;
-  num distributionPrice = 30;
+  num reparationPrice = 30;
   num total = 0;
 
   @override
@@ -215,13 +215,13 @@ class _BillScreenState extends State<BillScreen> {
                             ),
                             Row(children: [
                               Checkbox(
-                                  value: distribution,
+                                  value: reparation,
                                   activeColor: greenColor,
                                   onChanged: (newBool) {
                                     setState(() {
-                                      distribution = newBool;
-                                      if (distribution == true) {
-                                        total += distributionPrice;
+                                      reparation = newBool;
+                                      if (reparation == true) {
+                                        total += reparationPrice;
                                       }
                                     });
                                   }),
@@ -261,13 +261,13 @@ class _BillScreenState extends State<BillScreen> {
                                     14,
                                     14,
                                     FontWeight.w500)),
-                            distribution == true
+                            reparation == true
                                 ? Padding(
                                     padding:
                                         EdgeInsets.symmetric(horizontal: 20.w),
                                     child: BillText(
                                         "Réparation",
-                                        "$distributionPrice",
+                                        "$reparationPrice",
                                         14,
                                         14,
                                         FontWeight.w500),

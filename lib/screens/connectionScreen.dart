@@ -35,8 +35,7 @@ class _ConnectionScreenState extends State<ConnectionScreen> {
     return Scaffold(
       body: GestureDetector(
         onTap: () {
-          FocusScope.of(context)
-              .unfocus(); // Dismiss keyboard when tapping outside
+          FocusScope.of(context).unfocus();
         },
         child: SafeArea(
           child: SingleChildScrollView(
@@ -47,7 +46,7 @@ class _ConnectionScreenState extends State<ConnectionScreen> {
                   BackAppbar("Connectez-vous", () {
                     Navigator.of(context).pop();
                   }),
-                  SizedBox(height: 130.h),
+                  SizedBox(height: 80.h),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 160.w),
                     child: Image.asset("assets/images/logo.png"),
@@ -69,8 +68,7 @@ class _ConnectionScreenState extends State<ConnectionScreen> {
                   SizedBox(height: 80.h),
                   Padding(
                     padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 10.h),
-                    child: CustomTextfield(
-                        "E-mail", FontAwesomeIcons.envelope,
+                    child: CustomTextfield("E-mail", FontAwesomeIcons.envelope,
                         TextInputType.emailAddress, email, (value) {
                       if (value == null || value.isEmpty) {
                         return 'Veuillez entrer votre email';
@@ -112,15 +110,15 @@ class _ConnectionScreenState extends State<ConnectionScreen> {
                         style: TextStyle(fontSize: 13.sp, color: darkColor),
                         children: [
                           TextSpan(
-                            
                               text: " Inscrivez-vous maintenant",
                               recognizer: TapGestureRecognizer()
-                            ..onTap = () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => InscriptionScreen()));
-                            },
+                                ..onTap = () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              InscriptionScreen()));
+                                },
                               style: TextStyle(
                                   fontSize: 13.sp,
                                   fontWeight: FontWeight.bold,

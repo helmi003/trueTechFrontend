@@ -4,6 +4,7 @@ import 'package:truetech/components/appbar.dart';
 import 'package:truetech/components/buttonWidget.dart';
 import 'package:truetech/components/copyRightText.dart';
 import 'package:truetech/components/socialWidget.dart';
+import 'package:truetech/screens/contactScreen.dart';
 import 'package:truetech/utils/colors.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -33,7 +34,11 @@ class HomeScreen extends StatelessWidget {
             ),
             Buttonwidget(false, lightColor, grayColor, "Contactez-nous", 200,
                 () {
-              print("text");
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ContactScreen(),
+                  ));
             }),
             SizedBox(
               height: 60.h,
